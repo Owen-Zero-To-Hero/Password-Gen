@@ -7,97 +7,81 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <style>
         body {
-            background-color: #333;
-            margin: 0;
-            color: white;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: Georgia, 'Times New Roman', Times, serif;
+          font-family: Arial, sans-serif;
+          background-color: #f8f8f8;
         }
-
-        .container {
-            background-color: #006699;
-            padding: 3rem;
-            border-radius: 1rem;
-            border: 2px solid black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .form {
-            display: grid;
-            grid-template-columns: auto auto;
-            row-gap: 1rem;
-            column-gap: 3rem;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .title {
-            margin: 0;
-            text-align: center;
-        }
-
-        label {
-            font-weight: bold;
-        }
-
-        .character-amount-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .number-input {
-            width: 2rem;
+      
+        h1 {
+          color: #333;
+          text-align: center;
+          margin-top: 50px;
         }
 
         .password-display {
-            background-color: white;
-            color: black;
-            padding: 1rem;
-            border: 1px solid #333;
-            height: 2rem;
-            width: 350px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            word-break: break-all;
-            border-radius: .5rem;
+            text-align: center;
         }
-
+      
+        form {
+          max-width: 600px;
+          margin: 50px auto;
+          background-color: #fff;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 0 0 10px #ccc;
+          text-align: center; /* added property */
+        }
+      
+        label {
+          display: block;
+          margin-bottom: 10px;
+          font-size: 16px;
+          font-weight: bold;
+        }
+      
+        input {
+          width: 80%;
+          text-align: center;
+          padding: 10px;
+          margin-bottom: 20px;
+          font-size: 16px;
+          border-radius: 5px;
+          border: 1px solid #ccc;
+        }
+      
+      
         .btn {
-            grid-column: span 2;
-            background-color: transparent;
-            border: 2px solid white;
-            color: white;
-            padding: .5rem 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 1rem;
+          display: block;
+          width: 100%;
+          background-color: #333;
+          color: #fff;
+          border: none;
+          padding: 10px;
+          font-size: 16px;
+          cursor: pointer;
+          border-radius: 5px;
         }
-
+      
         .btn:hover {
-            background-color: #FFFFFF33;
+          background-color: #555;
         }
-    </style>
+      </style>      
     <title>Password Generator</title>
 </head>
 
 <body>
     <div class="container">
         <h1 class="title">Password Generator</h1>
+        <!-- Display password -->
         <h3 class="password-display" id="passwordDisplay">password</h3>
+
+        <!-- Input list to create password -->
         <form id="passwordGeneratorForm" class="form">
             <label for="characterAmountNumber">Number Of Characters</label>
             <div class="character-amount-container">
                 <input type="range" min="1" max="50" value="10" id="characterAmountRange">
                 <input class="number-input" type="number" min="1" max="50" value="10" id="characterAmountNumber">
             </div>
-
+            
             <label for="includeUppercase">Include Uppercase</label>
             <input type="checkbox" id="includeUppercase">
 
@@ -106,7 +90,7 @@
 
             <label for="includeSymbols">Include Symbols</label>
             <input type="checkbox" id="includeSymbols">
-
+            <br><br>
             <button type="submit" class="btn">Generate Password</button>
         </form>
     </div>
